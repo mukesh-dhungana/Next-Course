@@ -29,23 +29,36 @@ import { useEffect } from "react";
 import React, { Component } from "react";
 
 class Home extends Component {
-  static getInitialProps = async (context) => {
-    const { res } = context;
-    res.statusCode = 500;
-    let response = await fetch("http://localhost:3000/api/hello");
-    let data = await response.json();
-    return {
-      data,
-    };
-  };
+  // static getInitialProps = async (context) => {
+  //   const { res } = context;
+  //   res.statusCode = 500;
+  //   let response = await fetch("http://localhost:3000/api/hello");
+  //   let data = await response.json();
+  //   return {
+  //     data,
+  //   };
+  // };
   render() {
     return (
       <div className={styles.container}>
         This is home page
-        <h1>{this.props.data.name}</h1>
+        <h1>Hello {this.props.user.results[0].name.first}</h1>
       </div>
     );
   }
 }
 
 export default Home;
+
+export const getStaticProps = async(context)=>{
+  console.log(context);   
+  let response = await fetch('https://randomuser.me/api/');
+  let user = await response.json();
+  return {
+    props:{
+       user,
+    },
+    //notFound : true,
+    revalidate : 10
+  }
+}
