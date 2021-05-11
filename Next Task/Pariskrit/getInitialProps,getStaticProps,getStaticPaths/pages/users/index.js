@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Users({ users }) {
+export default function Users({ allUsers }) {
   return (
     <ol>
-      {users.map((user) => (
+      {allUsers.map((user) => (
         <li key={user.id}>
           <Link href={`/users/` + user.id}>
             <a>{user.name}</a>
@@ -19,6 +19,6 @@ export async function getStaticProps(ctx) {
   const data = await res.json();
 
   return {
-    props: { users: data },
+    props: { allUsers: data },
   };
 }
