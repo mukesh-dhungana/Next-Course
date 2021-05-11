@@ -8,7 +8,7 @@ function User({ user }) {
             <td>{user.name}</td>
             <td>{user.address.street}</td>
             <td>
-                <Link href={`/users/${user.id}`}><a>Detail</a></Link>
+                <Link href={`/users/${user.id}`}><a style={{color:"red"}}>Click</a></Link>
             </td>
         </tr>
     )
