@@ -1,0 +1,33 @@
+.container {
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #c9ffbf; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffafbd,
+    #c9ffbf
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffafbd,
+    #c9ffbf
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.listItem {
+  padding: 20px;
+  background-color: rgb(17, 153, 135);
+  margin-bottom: 10px;
+  outline: none;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.listItem:hover {
+  background-color: aquamarine;
+}
