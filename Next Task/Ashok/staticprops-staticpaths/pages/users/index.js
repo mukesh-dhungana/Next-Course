@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "next/link";
 import Head from "next/head";
+import Link from "next/link";
 import Home from "../../styles/Home.module.css";
 
 function index(props) {
@@ -9,8 +9,9 @@ function index(props) {
       <Head>
         <title>All Users</title>
       </Head>
+      <h3>All Users</h3>
       {props.users.map((user) => (
-        <Link key={user.id} href={`/users/${user.id}`}>
+        <Link href={`/users/${user.id}`} key={user.id}>
           <a className={Home.listItem}>{user.name}</a>
         </Link>
       ))}
@@ -19,9 +20,9 @@ function index(props) {
 }
 
 export const getStaticProps = async (ctx) => {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/users`);
-  const users = await response.json();
-  return { props: { users } };
+  const response = await fetch(`http://localhost:3000/api/hello`);
+  const { users } = await response.json();
+  return { props: { users }, revalidate: 10 };
 };
 
 export default index;
