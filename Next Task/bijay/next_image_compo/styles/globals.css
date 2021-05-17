@@ -1,0 +1,65 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.profile-wrapper {
+  max-width: 70%;
+  margin: 20px auto;
+  border-radius: 8px;
+  padding: 12px 40px;
+  box-shadow: 1px 2px 2px 2px #b4b2b2;
+  text-align: center;
+}
+
+.profile-wrapper .header {
+  width: 90%;
+  margin: auto;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 1px 2px 2px 2px #758da3;
+
+}
+
+.profile-wrapper .header>* {
+  margin-top: 0;
+}
+
+.profile-wrapper .body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.profile-wrapper .body .body-info {
+  border-right: 2px solid rgba(220, 20, 60, 0.637);
+}
+
+.profile-wrapper .body .body-info .website {
+  color: blue;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-wrapper .body .body-info .website:hover {
+  filter: brightness(5);
+  color: #7a0619;
+}
+
+.profile-wrapper .img-container {
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px 2px #0f3101a1;
+}
