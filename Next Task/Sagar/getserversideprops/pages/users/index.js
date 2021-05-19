@@ -1,8 +1,12 @@
+import Link from "next/link";
+
 const Users = ({ users }) => {
   return (
     <div>
       {users.map((user) => (
-        <h4 key={user.id}>{user.name}</h4>
+        <h4 key={user.id}>
+          <Link href={`/users/${user.id}`}>{user.name}</Link>
+        </h4>
       ))}
     </div>
   );
