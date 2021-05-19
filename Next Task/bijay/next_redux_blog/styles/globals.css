@@ -193,3 +193,8 @@ a {
   height: 40px;
   text-align: center;
 }
+
+.add-wrapper {
+  max-width: 10vw;
+  margin: 1rem auto;
+}

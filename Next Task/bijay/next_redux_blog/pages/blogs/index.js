@@ -8,6 +8,7 @@ import Modal from "../../components/Modal";
 
 const Blogs = () => {
   const [edit, setEdit] = useState(false);
+  const [add, setAdd] = useState(false);
   const [editId, setEditId] = useState();
   const router = useRouter();
 
@@ -36,8 +37,12 @@ const Blogs = () => {
   return (
     <>
       {edit && (
-        <Modal setEdit={setEdit} id={editId} blogs={blogs} />
+        <Modal setEdit={setEdit} id={editId} blogs={blogs} type="edit" />
       )}
+      {add && <Modal setEdit={setAdd} />}
+      <div className="add-wrapper">
+        <button onClick={() => setAdd(true)}>ADD</button>
+      </div>
       <div className="blogs-wrapper">
         {blogs.map((blog) => (
           <Card

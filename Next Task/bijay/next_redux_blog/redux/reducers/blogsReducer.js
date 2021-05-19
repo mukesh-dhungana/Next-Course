@@ -1,10 +1,10 @@
-import { FETCH, DELETE, EDIT } from "../types";
+import { FETCH, DELETE, EDIT, ADD } from "../types";
 
 const initialState = {
   blogs: [],
 };
 
-export default (state = initialState, action) => {
+export const blogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH:
       //   return Object.assign({}, state, { token: action.payload });
@@ -12,7 +12,12 @@ export default (state = initialState, action) => {
         ...state,
         blogs: action.payload,
       };
-
+    case ADD:
+      console.log(action.payload);
+      return {
+        ...state,
+        blogs: [...state.blogs, action.payload],
+      };
     case EDIT:
       console.log(action.payload);
       return {
