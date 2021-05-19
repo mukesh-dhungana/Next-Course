@@ -1,15 +1,17 @@
 import React from 'react'
-import { shallowEqual, useDispatch, useSelector } from 'react-redux'
-import Form from '../components/Form'
-import User from '../components/User'
-import { initializeStore } from '../redux'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { wrapper } from '../redux/store'
+import Form from '../Component/Form'
+import User from '../Component/User'
+import { deleteUser } from '../redux/actions/userActions'
 function Users() {
 
     const dispatch = useDispatch()
-    const { users, editMode, userDetail } = useSelector(state => state.userData, shallowEqual)
+    const users = useSelector(state => state.userData.users)
+    const userDetail = useSelector(state => state.userData.userDetail)
+    const editMode = useSelector(state => state.userData.editMode)
 
-    const deleteData = (payload) => dispatch({ type: "DELETE_USER", payload })
+    const deleteData = (payload) => dispatch(deleteUser(payload))
     const editData = (payload) => dispatch({ type: "EDIT_MODE", payload })
 
     return (
@@ -45,12 +47,10 @@ function Users() {
 }
 
 export default Users
-
-export const getStaticProps = async () => {
-    const { dispatch, getState } = initializeStore()
-    const res = await fetch('http://localhost:3000/api/users')
-    const data = await res.json()
-    dispatch({ type: "FETCH_USER", payload: data })
-
-    return { props: { initialReduxState: getState() } }
-}
+export const getServerSideProps = wrapper.getServerSideProps(
+    async ({ store }) => {
+        const res = await fetch('http://localhost:8000/users')
+        const data = await res.json()
+        store.dispatch({ type: "FETCH_USER", payload: data })
+    }
+)

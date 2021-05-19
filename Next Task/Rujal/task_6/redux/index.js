@@ -19,13 +19,13 @@ const initStore = (preloadedstate) => {
         ))
 }
 
-export const initializeStore = (preloadedState = reducers.state) => {
+export const initializeStore = (preloadedState) => {
 
     let _store = store ?? initStore(preloadedState)
     if (preloadedState && store) {
         _store = initStore({
-            ...preloadedState,
             ...store.getState(),
+            ...preloadedState,
         })
 
         store = undefined
