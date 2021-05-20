@@ -1,8 +1,9 @@
 import Head from "next/head";
 import { useState } from "react";
-import Blog from "../components/Blog";
-import { initializeStore } from "../redux/store";
 import Form from "../components/Form";
+import Blog from "../components/Blog";
+import { wrapper } from "../redux/store";
+import { initializeStore } from "../redux/store";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
@@ -10,12 +11,10 @@ export default function Home() {
 
   const [editData, setEditData] = useState(null);
 
-
   const dispatch = useDispatch();
   const state = useSelector((state) => state.blogs, shallowEqual);
 
   console.log("asdf", state);
-  // console.log("props", blogs);
 
   return (
     <div>
@@ -51,15 +50,15 @@ export default function Home() {
   );
 }
 
-export async function getServerSideProps() {
-  const { dispatch, getState } = initializeStore();
-  const response = await fetch("http://localhost:3000/api/posts");
-  const posts = await response.json();
-  dispatch({ type: "SHOW_BLOG", payload: posts });
+export const getServerSideProps = wrapper.getServerSideProps(
+  async ({ store }) => {
+    const res = await fetch("http://localhost:3000/api/posts");
+    const data = await res.json();
 
-  return {
-    props: {
-      initialReduxState: getState(),
-    },
-  };
-}
+    console.log("dddd", data);
+    store.dispatch({ type: "SHOW_BLOG", payload: data });
+    return {
+      props: {},
+    };
+  }
+);
