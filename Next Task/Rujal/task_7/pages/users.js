@@ -4,6 +4,7 @@ import { wrapper } from '../redux/store'
 import Form from '../Component/Form'
 import User from '../Component/User'
 import { deleteUser } from '../redux/actions/userActions'
+
 function Users() {
 
     const dispatch = useDispatch()
@@ -47,6 +48,7 @@ function Users() {
 }
 
 export default Users
+
 export const getServerSideProps = wrapper.getServerSideProps(
     async ({ store }) => {
         const res = await fetch('http://localhost:8000/users')
