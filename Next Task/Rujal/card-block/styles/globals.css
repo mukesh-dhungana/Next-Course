@@ -38,18 +38,25 @@ a {
   margin:5px;
 }
 
-.header{
+.header, .header-text{
   border-top: 0;
   border-right: 0;
   border-bottom: 0;
   border-left:2px solid white;
   background: #FFA451;
   outline: none;
-  padding-left: 8px;
   margin-top: 10px;
   margin-left: 10px;
-
+  height: 22px;
 }
+
+.header-text{
+  margin-bottom: 0;
+  font-weight: bold;
+  border-left: 0;
+  text-align: center;
+}
+
 
 .body{
   border-top: 0;
@@ -83,10 +90,6 @@ a {
   font-size: 0.9rem;
 }
 
-.header-text{
-  margin: 2px;
-  text-align: center;
-}
 
 .line{
   height: 2px;

@@ -13,7 +13,7 @@ function Body() {
 
     return (
 
-        <>
+        <div>
             {!bSubmitted ? <textarea
                 name="header"
                 type="text"
@@ -40,7 +40,7 @@ function Body() {
                     {bText}
                 </p>}
 
-        </>
+        </div>
     )
 }
 

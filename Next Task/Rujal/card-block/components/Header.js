@@ -11,7 +11,7 @@ function Header() {
     }, [hSubmitted])
 
     return (
-        <>
+        <div>
 
             {!hSubmitted ? <input
                 name="header"
@@ -28,14 +28,14 @@ function Header() {
                 ref={headerRef}
             />
                 :
-                <h5
+                <p
                     className="header-text"
                     onClick={() => {
                         setHeader(th => ({ ...th, hSubmitted: false }))
                     }}>
                     {hText}
-                </h5>}
-        </>
+                </p>}
+        </div>
     )
 }
 
