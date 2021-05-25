@@ -1,0 +1,119 @@
+.container {
+  width: 85%;
+  margin: 20px auto 0;
+}
+
+.align {
+  margin: 20px 0;
+}
+
+.button {
+  width: 200px;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #459eda;
+  box-shadow: 3px 3px 9px #225f88;
+}
+
+.button:hover {
+  background-color: #5fb7f1;
+}
+
+.FormContainer {
+  width: 250px;
+  background: linear-gradient(125deg, #2980b9, #2c3e50);
+  height: 250px;
+  border-radius: 10px;
+  overflow: auto;
+  box-shadow: 5px 5px 15px rgba(44, 62, 80, 1);
+}
+
+.header {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+}
+
+.header .formHeader,
+.done {
+  color: rgb(187, 197, 255);
+  width: 225px;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 8px 10px;
+}
+
+.header .formHeader::placeholder {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.done {
+  color: rgb(255, 255, 255);
+}
+
+.line {
+  height: 1px;
+  width: 95%;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 7px auto;
+}
+
+.closeBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: white;
+  margin-right: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.closeBtn:hover {
+  transform: scale(1.5);
+}
+
+.todoList {
+  color: white;
+}
+
+.todoForm {
+  padding: 10px;
+}
+
+.addTodo {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.addTodo::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-row-gap: 20px;
+  }
+}

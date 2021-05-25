@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useSelector, shallowEqual } from "react-redux";
+import { addBlog, editBlog } from "../redux/slice";
 
 const Form = ({ dispatch, setShowForm, editData }) => {
-  const edit = useSelector((state) => state.blogs.editMode, shallowEqual);
+  const edit = useSelector((state) => state.BLOGS.editMode, shallowEqual);
   console.log("data", edit);
 
   console.log("edit", editData);
@@ -31,7 +32,6 @@ const Form = ({ dispatch, setShowForm, editData }) => {
     setData({ ...data, [name]: value });
   };
 
-
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -43,7 +43,7 @@ const Form = ({ dispatch, setShowForm, editData }) => {
         description: description,
       };
 
-      dispatch({ type: "ADD_BLOG", payload: { data } });
+      dispatch(addBlog({ data }));
     } else {
       const eData = {
         id: editData.id,
@@ -51,8 +51,7 @@ const Form = ({ dispatch, setShowForm, editData }) => {
         title: title,
         description: description,
       };
-      dispatch({ type: "EDIT_BLOG", payload: { eData } });
-      
+      dispatch(editBlog({ eData }));
     }
     setShowForm(false);
   };

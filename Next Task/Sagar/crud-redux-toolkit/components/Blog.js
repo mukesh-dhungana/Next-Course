@@ -1,20 +1,23 @@
 import React from "react";
-import { shallowEqual, useSelector } from "react-redux";
+import { deleteBlog, editToggle } from "../redux/slice";
+// import  from "../redux/slice";
+import { useDispatch, useSelector } from "react-redux";
+
+// import { shallowEqual, useSelector } from "react-redux";
 
 const Blog = ({
   blog: { title, description, user, id },
-  dispatch,
+
   setEditData,
 }) => {
-  const edit = useSelector((state) => state.blogs.editMode, shallowEqual);
-  console.log("eee", edit);
+  const dispatch = useDispatch();
+  const edit = useSelector((state) => state.BLOGS.editMode);
+  // console.log("eee", edit);
+  console.log("id", dispatch(deleteBlog));
 
   const onEditHandler = (e) => {
     setEditData({ id, user, title, description });
-    dispatch({
-      type: "EDIT_TOGGLE",
-      payload: { edit: edit },
-    });
+    dispatch(editToggle(edit));
   };
 
   return (
@@ -22,9 +25,7 @@ const Blog = ({
       <h3>
         {title}
         <span>
-          <button
-            onClick={() => dispatch({ type: "DELETE_BLOG", payload: { id } })}
-          >
+          <button onClick={() => dispatch(deleteBlog({ id }))}>
             Remove Post
           </button>
           <button onClick={(e) => onEditHandler(e)}>Edit</button>
