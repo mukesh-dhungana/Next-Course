@@ -1,0 +1,11 @@
+.header {
+  color: black;
+}
+
+.header-medium {
+  font-size: 2.5rem;
+}
+
+.header-large {
+  font-size: 4rem;
+}
