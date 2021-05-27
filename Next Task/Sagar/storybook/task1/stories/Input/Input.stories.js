@@ -12,4 +12,4 @@ export const Medium = () => (
 );
 export const Large = () => <Input variant="large" placeholder="Large size" />;
 
-Small.storyName = "ABC";
+// Small.storyName = "ABC";
