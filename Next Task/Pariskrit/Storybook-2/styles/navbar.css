@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  padding: 0 10px;
+}
+
+.navbar > p {
+  margin: 10px;
+}
+
+.navbar ul {
+  display: flex;
+}
