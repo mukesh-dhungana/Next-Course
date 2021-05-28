@@ -1,0 +1,36 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(function() {
+var exports = {};
+exports.id = "pages/api/posts";
+exports.ids = ["pages/api/posts"];
+exports.modules = {
+
+/***/ "./pages/api/posts/index.js":
+/*!**********************************!*\
+  !*** ./pages/api/posts/index.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// Next.js API route support: https://nextjs.org/docs/api-routes/introduction\nlet posts = [{\n  id: 1,\n  title: \"post 1\",\n  detail: \"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam nostrum atque cum, neque tenetur, in magnam debitis autem quas, molestiae inventore ab voluptates aliquam suscipit maiores corrupti quam est sapiente!  \",\n  author: \"Ram Gopal Verma\"\n}, {\n  id: 2,\n  title: \"post 2\",\n  detail: \"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam nostrum atque cum, neque tenetur, in magnam debitis autem quas, molestiae inventore ab voluptates aliquam suscipit maiores corrupti quam est sapiente!  \",\n  author: \"Lalita Bannerji\"\n}];\n/* harmony default export */ __webpack_exports__[\"default\"] = ((req, res) => {\n  switch (req.method) {\n    case \"GET\":\n      res.status(200).json(posts);\n      break;\n\n    case \"POST\":\n      posts.push(req.body);\n      res.status(200).json({\n        msg: \"Added post done\"\n      });\n      break;\n\n    case \"PUT\":\n      posts = posts.map(post => post.id === req.body.id ? req.body : post);\n      res.status(200).json({\n        msg: \"Edit post done\"\n      });\n      break;\n\n    case \"DELETE\":\n      posts = posts.filter(post => post.id !== +req.query.id);\n      res.status(200).json({\n        msg: \"Delete post done\"\n      });\n      break;\n\n    default:\n      res.setHeader(\"Allow\", [\"GET\", \"POST\", \"PUT\", \"DELETE\"]);\n      res.status(405).end(`Method ${req.method} Not Allowed`);\n      break;\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9uZXh0dGVzdC8uL3BhZ2VzL2FwaS9wb3N0cy9pbmRleC5qcz83NTdmIl0sIm5hbWVzIjpbInBvc3RzIiwiaWQiLCJ0aXRsZSIsImRldGFpbCIsImF1dGhvciIsInJlcSIsInJlcyIsIm1ldGhvZCIsInN0YXR1cyIsImpzb24iLCJwdXNoIiwiYm9keSIsIm1zZyIsIm1hcCIsInBvc3QiLCJmaWx0ZXIiLCJxdWVyeSIsInNldEhlYWRlciIsImVuZCJdLCJtYXBwaW5ncyI6IjtBQUFBO0FBRUEsSUFBSUEsS0FBSyxHQUFHLENBQ1Y7QUFDRUMsSUFBRSxFQUFFLENBRE47QUFFRUMsT0FBSyxFQUFFLFFBRlQ7QUFHRUMsUUFBTSxFQUNKLDBOQUpKO0FBS0VDLFFBQU0sRUFBRTtBQUxWLENBRFUsRUFRVjtBQUNFSCxJQUFFLEVBQUUsQ0FETjtBQUVFQyxPQUFLLEVBQUUsUUFGVDtBQUdFQyxRQUFNLEVBQ0osME5BSko7QUFLRUMsUUFBTSxFQUFFO0FBTFYsQ0FSVSxDQUFaO0FBaUJBLCtEQUFlLENBQUNDLEdBQUQsRUFBTUMsR0FBTixLQUFjO0FBQzNCLFVBQVFELEdBQUcsQ0FBQ0UsTUFBWjtBQUNFLFNBQUssS0FBTDtBQUNFRCxTQUFHLENBQUNFLE1BQUosQ0FBVyxHQUFYLEVBQWdCQyxJQUFoQixDQUFxQlQsS0FBckI7QUFDQTs7QUFDRixTQUFLLE1BQUw7QUFDRUEsV0FBSyxDQUFDVSxJQUFOLENBQVdMLEdBQUcsQ0FBQ00sSUFBZjtBQUNBTCxTQUFHLENBQUNFLE1BQUosQ0FBVyxHQUFYLEVBQWdCQyxJQUFoQixDQUFxQjtBQUFFRyxXQUFHLEVBQUU7QUFBUCxPQUFyQjtBQUNBOztBQUNGLFNBQUssS0FBTDtBQUNFWixXQUFLLEdBQUdBLEtBQUssQ0FBQ2EsR0FBTixDQUFXQyxJQUFELElBQVdBLElBQUksQ0FBQ2IsRUFBTCxLQUFZSSxHQUFHLENBQUNNLElBQUosQ0FBU1YsRUFBckIsR0FBMEJJLEdBQUcsQ0FBQ00sSUFBOUIsR0FBcUNHLElBQTFELENBQVI7QUFDQVIsU0FBRyxDQUFDRSxNQUFKLENBQVcsR0FBWCxFQUFnQkMsSUFBaEIsQ0FBcUI7QUFBRUcsV0FBRyxFQUFFO0FBQVAsT0FBckI7QUFDQTs7QUFDRixTQUFLLFFBQUw7QUFDRVosV0FBSyxHQUFHQSxLQUFLLENBQUNlLE1BQU4sQ0FBY0QsSUFBRCxJQUFVQSxJQUFJLENBQUNiLEVBQUwsS0FBWSxDQUFDSSxHQUFHLENBQUNXLEtBQUosQ0FBVWYsRUFBOUMsQ0FBUjtBQUNBSyxTQUFHLENBQUNFLE1BQUosQ0FBVyxHQUFYLEVBQWdCQyxJQUFoQixDQUFxQjtBQUFFRyxXQUFHLEVBQUU7QUFBUCxPQUFyQjtBQUNBOztBQUNGO0FBQ0VOLFNBQUcsQ0FBQ1csU0FBSixDQUFjLE9BQWQsRUFBdUIsQ0FBQyxLQUFELEVBQVEsTUFBUixFQUFnQixLQUFoQixFQUF1QixRQUF2QixDQUF2QjtBQUNBWCxTQUFHLENBQUNFLE1BQUosQ0FBVyxHQUFYLEVBQWdCVSxHQUFoQixDQUFxQixVQUFTYixHQUFHLENBQUNFLE1BQU8sY0FBekM7QUFDQTtBQW5CSjtBQXFCRCxDQXRCRCIsImZpbGUiOiIuL3BhZ2VzL2FwaS9wb3N0cy9pbmRleC5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIE5leHQuanMgQVBJIHJvdXRlIHN1cHBvcnQ6IGh0dHBzOi8vbmV4dGpzLm9yZy9kb2NzL2FwaS1yb3V0ZXMvaW50cm9kdWN0aW9uXG5cbmxldCBwb3N0cyA9IFtcbiAge1xuICAgIGlkOiAxLFxuICAgIHRpdGxlOiBcInBvc3QgMVwiLFxuICAgIGRldGFpbDpcbiAgICAgIFwiTG9yZW0gaXBzdW0sIGRvbG9yIHNpdCBhbWV0IGNvbnNlY3RldHVyIGFkaXBpc2ljaW5nIGVsaXQuIFRvdGFtIG5vc3RydW0gYXRxdWUgY3VtLCBuZXF1ZSB0ZW5ldHVyLCBpbiBtYWduYW0gZGViaXRpcyBhdXRlbSBxdWFzLCBtb2xlc3RpYWUgaW52ZW50b3JlIGFiIHZvbHVwdGF0ZXMgYWxpcXVhbSBzdXNjaXBpdCBtYWlvcmVzIGNvcnJ1cHRpIHF1YW0gZXN0IHNhcGllbnRlISAgXCIsXG4gICAgYXV0aG9yOiBcIlJhbSBHb3BhbCBWZXJtYVwiLFxuICB9LFxuICB7XG4gICAgaWQ6IDIsXG4gICAgdGl0bGU6IFwicG9zdCAyXCIsXG4gICAgZGV0YWlsOlxuICAgICAgXCJMb3JlbSBpcHN1bSwgZG9sb3Igc2l0IGFtZXQgY29uc2VjdGV0dXIgYWRpcGlzaWNpbmcgZWxpdC4gVG90YW0gbm9zdHJ1bSBhdHF1ZSBjdW0sIG5lcXVlIHRlbmV0dXIsIGluIG1hZ25hbSBkZWJpdGlzIGF1dGVtIHF1YXMsIG1vbGVzdGlhZSBpbnZlbnRvcmUgYWIgdm9sdXB0YXRlcyBhbGlxdWFtIHN1c2NpcGl0IG1haW9yZXMgY29ycnVwdGkgcXVhbSBlc3Qgc2FwaWVudGUhICBcIixcbiAgICBhdXRob3I6IFwiTGFsaXRhIEJhbm5lcmppXCIsXG4gIH0sXG5dO1xuXG5leHBvcnQgZGVmYXVsdCAocmVxLCByZXMpID0+IHtcbiAgc3dpdGNoIChyZXEubWV0aG9kKSB7XG4gICAgY2FzZSBcIkdFVFwiOlxuICAgICAgcmVzLnN0YXR1cygyMDApLmpzb24ocG9zdHMpO1xuICAgICAgYnJlYWs7XG4gICAgY2FzZSBcIlBPU1RcIjpcbiAgICAgIHBvc3RzLnB1c2gocmVxLmJvZHkpO1xuICAgICAgcmVzLnN0YXR1cygyMDApLmpzb24oeyBtc2c6IFwiQWRkZWQgcG9zdCBkb25lXCIgfSk7XG4gICAgICBicmVhaztcbiAgICBjYXNlIFwiUFVUXCI6XG4gICAgICBwb3N0cyA9IHBvc3RzLm1hcCgocG9zdCkgPT4gKHBvc3QuaWQgPT09IHJlcS5ib2R5LmlkID8gcmVxLmJvZHkgOiBwb3N0KSk7XG4gICAgICByZXMuc3RhdHVzKDIwMCkuanNvbih7IG1zZzogXCJFZGl0IHBvc3QgZG9uZVwiIH0pO1xuICAgICAgYnJlYWs7XG4gICAgY2FzZSBcIkRFTEVURVwiOlxuICAgICAgcG9zdHMgPSBwb3N0cy5maWx0ZXIoKHBvc3QpID0+IHBvc3QuaWQgIT09ICtyZXEucXVlcnkuaWQpO1xuICAgICAgcmVzLnN0YXR1cygyMDApLmpzb24oeyBtc2c6IFwiRGVsZXRlIHBvc3QgZG9uZVwiIH0pO1xuICAgICAgYnJlYWs7XG4gICAgZGVmYXVsdDpcbiAgICAgIHJlcy5zZXRIZWFkZXIoXCJBbGxvd1wiLCBbXCJHRVRcIiwgXCJQT1NUXCIsIFwiUFVUXCIsIFwiREVMRVRFXCJdKTtcbiAgICAgIHJlcy5zdGF0dXMoNDA1KS5lbmQoYE1ldGhvZCAke3JlcS5tZXRob2R9IE5vdCBBbGxvd2VkYCk7XG4gICAgICBicmVhaztcbiAgfVxufTtcbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./pages/api/posts/index.js\n");
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
+var __webpack_exports__ = (__webpack_exec__("./pages/api/posts/index.js"));
+module.exports = __webpack_exports__;
+
+})();

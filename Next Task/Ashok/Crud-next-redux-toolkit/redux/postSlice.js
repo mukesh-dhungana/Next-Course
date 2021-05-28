@@ -31,10 +31,12 @@ const postReducer = createSlice({
     },
   },
 
-  extraReducers: {
-    [HYDRATE]: (state, action) => {
-      return { ...state, ...action.payload };
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(HYDRATE, (state, action) => {
+        return { ...state, ...action.payload };
+      })
+      .addDefaultCase((state, action) => ({}));
   },
 });
 
