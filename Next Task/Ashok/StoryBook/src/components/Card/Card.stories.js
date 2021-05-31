@@ -4,16 +4,29 @@ import Card from "./Card";
 
 const Template = (args) => <Card {...args} />;
 
+export const Primary = Template.bind({});
+Primary.args = {
+  backgroundColor: "blue",
+  children: "Some content",
+  size: "medium",
+};
+export const Secondary = Template.bind({});
+Secondary.args = {
+  backgroundColor: "white",
+  children: "Some content",
+  size: "medium",
+};
+
 export const Small = Template.bind({});
 Small.args = {
-  backgroundColor: "blue",
+  backgroundColor: "white",
   children: "Small content",
   size: "small",
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  backgroundColor: "Gray",
+  backgroundColor: "white",
   children: "Medium content",
   size: "medium",
 };

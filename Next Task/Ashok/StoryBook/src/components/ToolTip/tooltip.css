@@ -8,7 +8,10 @@
   padding: 10px;
   display: inline-block;
   color: aliceblue;
-  position: relative;
+  height: auto;
+  position: absolute;
+  /* top: 150%; */
+  bottom: 110%;
 }
 
 .tooltip-content {
