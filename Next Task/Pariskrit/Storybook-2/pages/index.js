@@ -1,4 +1,4 @@
-import { Tooltip } from "../components/Tooltip/Navbar";
+import { Tooltip } from "../components/Tooltip/Tooltip";
 
 export default function Home() {
   return (
